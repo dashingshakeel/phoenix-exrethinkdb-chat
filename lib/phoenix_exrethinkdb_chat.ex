@@ -7,6 +7,7 @@ defmodule PhoenixExrethinkdbChat do
     import Supervisor.Spec, warn: false
 
     children = [
+      worker(PhoenixExrethinkdbChat.Repo, []),
       # Start the endpoint when the application starts
       supervisor(PhoenixExrethinkdbChat.Endpoint, []),
       # Here you could define other workers and supervisors as children
